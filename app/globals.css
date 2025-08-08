@@ -1,26 +1,54 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-app-text: #1b2528;
+  --color-app-background: #fcfdfd;
+  --color-app-highlight: #386776;
+  --color-app-highlight-16: hsl(195 35% 33% / 0.16);
+  --color-app-highlight-text: #3a6c7b;
+  --color-app-thick-highlight: #4b8b9f;
+  --color-app-thick-highlight-text: #020303;
+  --color-app-small-text: #15272d;
+  --color-app-small-text-62: hsl(203 29% 13% / 0.62);
+  --color-app-credit-debit-bg: #34616f;
+  --color-app-credit-debit-bg-9: hsl(198 36% 32% / 0.09);
+  --color-app-debit: #c6381b;
+  --color-app-credit: #087a2e;
+  --color-app-increment-text: #3e7383;
+  --color-app-table-bg: #49656e;
+  --color-app-current-tab: #437d8e;
+
+  --font-family-sans: var(--font-public-sans), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @media (min-width: 1024px) {
+    .main-layout {
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+    }
+  }
+
+  .sidebar {
+    @apply fixed left-0 h-[100vh] z-50
+           transform transition-transform duration-300 ease-in-out
+           lg:static top-0 lg:top-0 lg:h-screen lg:transform-none lg:z-auto
+           bg-app-background py-7 sm:py-2 md:py-2 lg:max-w-80 sm:w-[50vw] md:w-[40vw];
+  }
+
+  /* When sidebar is open */
+  .sidebar.open {
+    @apply translate-x-0;
+  }
+
+  /* When sidebar is closed (mobile/tablet only) */
+  .sidebar:not(.open) {
+    @apply -translate-x-full lg:translate-x-0;
+  }
 }
