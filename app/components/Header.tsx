@@ -42,8 +42,8 @@ const Header = () => {
     <section className=' w-full font-public-sans text-app-text flex-col justify-between'>
       <div className='flex items-center h-10 justify-between mb-3'>
         <div className='flex items-center justify-between gap-2'>
-          <div className='flex items-center gap-1'>
-            <span className='font-bold leading-10 text-2xl sm:text-xl'>
+          <div className='flex items-center gap-1 sm:gap-0'>
+            <span className='font-bold leading-10 text-2xl sm:text-[12px] sm:leading-5'>
               Wallet Ledger
             </span>
             <Image

@@ -12,7 +12,7 @@ const DashboardContent = () => {
   const { activeTab } = useTab();
 
   return (
-    <div className='p-6'>
+    <div className='p-6 sm:p-0'>
       <Header />
 
       <TabContent
@@ -24,7 +24,7 @@ const DashboardContent = () => {
           </>
         }
         transactionsContent={
-          <div className='bg-white p-6 rounded-lg'>
+          <div className='bg-white p-6 sm:p-0  rounded-lg'>
             <h2 className='text-xl font-semibold mb-4'>All Transactions</h2>
             <p className='text-app-small-text'>
               Transactions content coming soon...
