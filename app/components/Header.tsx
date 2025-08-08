@@ -43,7 +43,9 @@ const Header = () => {
       <div className='flex items-center h-10 justify-between mb-3'>
         <div className='flex items-center justify-between gap-2'>
           <div className='flex items-center gap-1'>
-            <span className='font-bold leading-10 text-2xl'>Wallet Ledger</span>
+            <span className='font-bold leading-10 text-2xl sm:text-xl'>
+              Wallet Ledger
+            </span>
             <Image
               src='/caret-down.png'
               alt='caret down'
